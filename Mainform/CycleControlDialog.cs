@@ -230,6 +230,11 @@ namespace OvulationCalendar
             this.Close();
         }
 
+        private void BeginDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
 
     }

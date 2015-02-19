@@ -89,6 +89,7 @@
             this.BeginDate.Name = "BeginDate";
             this.BeginDate.Size = new System.Drawing.Size(81, 20);
             this.BeginDate.TabIndex = 1;
+            this.BeginDate.ValueChanged += new System.EventHandler(this.BeginDate_ValueChanged);
             // 
             // EndDate
             // 

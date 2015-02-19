@@ -11,7 +11,6 @@ using System.IO;
 using System.Xml.Serialization;
 
 
-
 namespace OvulationCalendar
 {
     public partial class MainForm : Form
@@ -27,12 +26,13 @@ namespace OvulationCalendar
         public static Color BackGroundPredictionColor = System.Drawing.Color.FromArgb(0xE0, 0x10, 0xe0);
         public static Color foreOfnoEnd = System.Drawing.Color.Yellow;
         public static Color foreOfPrediction = System.Drawing.Color.Yellow;
-        public static Color BackGroundOvulationColor = System.Drawing.Color.FromArgb(0x10, 0xE0, 0x10);
+        public static Color BackGroundOvulationColor = System.Drawing.Color.FromArgb(0x10, 0xE0, 0x10);        
         public Calendar CL ;
+        public string CurrentUserName;
         public int yearsBeforeCurYear=5, CurYearIndex = 5;
+        public static string FileWithUsersNames = "Users";
         public int yearsAfterCurYear = 1;        
-        public int longestCycle = 20;
-        public string FileWithUsersNames;
+        public int longestCycle = 20;        
         public string FileWithSerializedCycles;
         public List<string> users = new List<string>();
         public static System.Drawing.Size MonthPanelSize = new System.Drawing.Size(200, 175);
@@ -77,28 +77,27 @@ namespace OvulationCalendar
             //MessageBox.Show(output, "fdfd");
             string CurUserName = Envs["USERNAME"].ToString();
             string pth = "";
-            string FileWithUsersNames="Users";
+          //  string FileWithUsersNames="Users";
 
 
-
-            if (!File.Exists(FileWithUsersNames))
-            {
+            string FullPathToDataBase = Properties.Settings.Default["SettingsFolder"].ToString() + Path.DirectorySeparatorChar ;
+            if (!File.Exists(FullPathToDataBase + FileWithUsersNames))
+            {   // Пытаемся создать файл базы в папке программы
                 users.Add(CurUserName);
+                Properties.Settings.Default["CurrentUser"] = CurUserName;
+                Properties.Settings.Default.Save();     // Сохраняем текущего пользователя как активного пользователя в постоянных настройках
                 //XmlSerializer serializer = new XmlSerializer(typeof(List<string>));
                 try
                 {
-
-
-                    TextWriter writer = new StreamWriter(FileWithUsersNames);
+                    TextWriter writer = new StreamWriter(FullPathToDataBase + FileWithUsersNames);
                     writer.WriteLine(CurUserName);
                     writer.Close();
-                    this.FileWithUsersNames = FileWithUsersNames;
-                    this.FileWithSerializedCycles = Path.GetDirectoryName(FileWithUsersNames) + users[0] ;
-
-
+                    Properties.Settings.Default["SettingsFolder"] = ".";
+                    Properties.Settings.Default.Save();
+                    this.FileWithSerializedCycles = Path.GetDirectoryName(FullPathToDataBase + FileWithUsersNames) + users[0];
                 }
                 catch
-                {
+                { //Если не получается, то будем хранить базу в Аppdata
                     try
                     {
                         pth = Envs["APPDATA"].ToString();
@@ -108,20 +107,22 @@ namespace OvulationCalendar
                             Directory.CreateDirectory(pth);
                         }
 
+                        Properties.Settings.Default["SettingsFolder"] = pth;
+                        Properties.Settings.Default.Save();
+
                         pth = pth + Path.DirectorySeparatorChar + FileWithUsersNames;
 
                         if (!File.Exists(pth))
                         {
                             TextWriter writer = new StreamWriter(pth);
                             writer.WriteLine(CurUserName);
-                            writer.Close();
-                            this.FileWithUsersNames = FileWithUsersNames;
+                            writer.Close();                            
                             this.FileWithSerializedCycles = Path.GetDirectoryName(FileWithUsersNames) + users[0];
                             //MessageBox.Show(this.FileWithSerializedCycles, "");
                         }
                         else
                         {
-                            ReadProgramData(pth);
+                            ReadProgramData(FileWithUsersNames);
   
                         }
 
@@ -142,27 +143,26 @@ namespace OvulationCalendar
             }
 
             else //файл юзеров существует
-            {
-                this.FileWithUsersNames = FileWithUsersNames;
-                
-                ReadProgramData(FileWithUsersNames);
-  
+            {               
+                ReadProgramData(FileWithUsersNames);  
             }
 
         }
 
         private void ReadProgramData(string FileWithUsersNames)
         {
+            string FullPathToDataBase = Properties.Settings.Default["SettingsFolder"].ToString() + Path.DirectorySeparatorChar;
             StreamReader sr;
             try
             {
-                 sr = new StreamReader(FileWithUsersNames);
+                sr = new StreamReader(FullPathToDataBase + FileWithUsersNames);
             
                 String line;
 
                 while ((line = sr.ReadLine()) != null)
                 {
                     users.Add(line);
+                    if (line == Properties.Settings.Default["CurrentUser"].ToString()) CurrentUserName = line;
                 }
 
                 sr.Close();
@@ -174,7 +174,7 @@ namespace OvulationCalendar
             };
 
                 if (this.FileWithSerializedCycles == null)
-                    this.FileWithSerializedCycles = Path.GetDirectoryName(FileWithUsersNames) + users[0];
+                    this.FileWithSerializedCycles = FullPathToDataBase + CurrentUserName;
 
                 if (File.Exists(this.FileWithSerializedCycles))
                 {
@@ -408,6 +408,12 @@ namespace OvulationCalendar
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void выбратьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Users UsersWindow = new Users(this);
+            UsersWindow.Show();
         }
 
 
