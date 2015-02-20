@@ -14,8 +14,7 @@ using System.Xml.Serialization;
 namespace OvulationCalendar
 {
     public partial class MainForm : Form
-    {
-                
+    {                
         public static int LuteinPhase_DaysBeforeMenstruation_Max = 16;
         public static int LuteinPhase_DaysBeforeMenstruation_Min = 12;
         public static int Years = 6;
