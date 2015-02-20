@@ -15,8 +15,7 @@ namespace OvulationCalendar
 {
     public partial class MainForm : Form
     {
-        //SortedList al = new SortedList();
-        
+                
         public static int LuteinPhase_DaysBeforeMenstruation_Max = 16;
         public static int LuteinPhase_DaysBeforeMenstruation_Min = 12;
         public static int Years = 6;
