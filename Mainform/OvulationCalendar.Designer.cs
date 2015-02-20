@@ -33,6 +33,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выбратьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.создатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -67,27 +71,24 @@
             this.stat2 = new System.Windows.Forms.Label();
             this.val2 = new System.Windows.Forms.Label();
             this.MainGroupBox = new System.Windows.Forms.GroupBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.выбратьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.создатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.StatsPanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.CycleDurationTable.SuspendLayout();
             this.StatsTable.SuspendLayout();
             this.MainGroupBox.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -111,6 +112,33 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // пользователиToolStripMenuItem
+            // 
+            this.пользователиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.выбратьToolStripMenuItem,
+            this.создатьToolStripMenuItem,
+            this.удалитьToolStripMenuItem});
+            this.пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
+            resources.ApplyResources(this.пользователиToolStripMenuItem, "пользователиToolStripMenuItem");
+            // 
+            // выбратьToolStripMenuItem
+            // 
+            this.выбратьToolStripMenuItem.Name = "выбратьToolStripMenuItem";
+            resources.ApplyResources(this.выбратьToolStripMenuItem, "выбратьToolStripMenuItem");
+            this.выбратьToolStripMenuItem.Click += new System.EventHandler(this.выбратьToolStripMenuItem_Click);
+            // 
+            // создатьToolStripMenuItem
+            // 
+            this.создатьToolStripMenuItem.Name = "создатьToolStripMenuItem";
+            resources.ApplyResources(this.создатьToolStripMenuItem, "создатьToolStripMenuItem");
+            this.создатьToolStripMenuItem.Click += new System.EventHandler(this.создатьToolStripMenuItem_Click);
+            // 
+            // удалитьToolStripMenuItem
+            // 
+            this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
+            resources.ApplyResources(this.удалитьToolStripMenuItem, "удалитьToolStripMenuItem");
+            this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
             // dataToolStripMenuItem
             // 
@@ -152,6 +180,7 @@
             // 
             // StatsPanel
             // 
+            resources.ApplyResources(this.StatsPanel, "StatsPanel");
             this.StatsPanel.Controls.Add(this.label8);
             this.StatsPanel.Controls.Add(this.calcPeriod);
             this.StatsPanel.Controls.Add(this.tableLayoutPanel1);
@@ -160,7 +189,6 @@
             this.StatsPanel.Controls.Add(this.label2);
             this.StatsPanel.Controls.Add(this.label1);
             this.StatsPanel.Controls.Add(this.StatsTable);
-            resources.ApplyResources(this.StatsPanel, "StatsPanel");
             this.StatsPanel.Name = "StatsPanel";
             this.StatsPanel.TabStop = false;
             // 
@@ -337,88 +365,69 @@
             this.MainGroupBox.Name = "MainGroupBox";
             this.MainGroupBox.TabStop = false;
             // 
-            // label17
-            // 
-            resources.ApplyResources(this.label17, "label17");
-            this.label17.BackColor = System.Drawing.SystemColors.Info;
-            this.label17.Name = "label17";
-            // 
-            // tableLayoutPanel3
-            // 
-            resources.ApplyResources(this.tableLayoutPanel3, "tableLayoutPanel3");
-            this.tableLayoutPanel3.Controls.Add(this.label18, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label19, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label20, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.label21, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.label22, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.label23, 1, 2);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            // 
-            // label18
-            // 
-            resources.ApplyResources(this.label18, "label18");
-            this.label18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label18.Name = "label18";
-            // 
-            // label19
-            // 
-            resources.ApplyResources(this.label19, "label19");
-            this.label19.Name = "label19";
-            // 
-            // label20
-            // 
-            resources.ApplyResources(this.label20, "label20");
-            this.label20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(224)))), ((int)(((byte)(16)))));
-            this.label20.Name = "label20";
-            // 
-            // label21
-            // 
-            resources.ApplyResources(this.label21, "label21");
-            this.label21.Name = "label21";
-            // 
-            // label22
-            // 
-            resources.ApplyResources(this.label22, "label22");
-            this.label22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(16)))), ((int)(((byte)(224)))));
-            this.label22.Name = "label22";
-            // 
-            // label23
-            // 
-            resources.ApplyResources(this.label23, "label23");
-            this.label23.Name = "label23";
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.tableLayoutPanel3);
             resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.tableLayoutPanel2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
-            // пользователиToolStripMenuItem
+            // label12
             // 
-            this.пользователиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.выбратьToolStripMenuItem,
-            this.создатьToolStripMenuItem,
-            this.удалитьToolStripMenuItem});
-            this.пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
-            resources.ApplyResources(this.пользователиToolStripMenuItem, "пользователиToolStripMenuItem");
+            resources.ApplyResources(this.label12, "label12");
+            this.label12.Name = "label12";
             // 
-            // выбратьToolStripMenuItem
+            // label13
             // 
-            this.выбратьToolStripMenuItem.Name = "выбратьToolStripMenuItem";
-            resources.ApplyResources(this.выбратьToolStripMenuItem, "выбратьToolStripMenuItem");
-            this.выбратьToolStripMenuItem.Click += new System.EventHandler(this.выбратьToolStripMenuItem_Click);
+            resources.ApplyResources(this.label13, "label13");
+            this.label13.BackColor = System.Drawing.SystemColors.Info;
+            this.label13.Name = "label13";
             // 
-            // создатьToolStripMenuItem
+            // tableLayoutPanel2
             // 
-            this.создатьToolStripMenuItem.Name = "создатьToolStripMenuItem";
-            resources.ApplyResources(this.создатьToolStripMenuItem, "создатьToolStripMenuItem");
+            resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
+            this.tableLayoutPanel2.Controls.Add(this.label14, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label15, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label16, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label24, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label25, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.label26, 1, 2);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             // 
-            // удалитьToolStripMenuItem
+            // label14
             // 
-            this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            resources.ApplyResources(this.удалитьToolStripMenuItem, "удалитьToolStripMenuItem");
+            resources.ApplyResources(this.label14, "label14");
+            this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label14.Name = "label14";
+            // 
+            // label15
+            // 
+            resources.ApplyResources(this.label15, "label15");
+            this.label15.Name = "label15";
+            // 
+            // label16
+            // 
+            resources.ApplyResources(this.label16, "label16");
+            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(224)))), ((int)(((byte)(16)))));
+            this.label16.Name = "label16";
+            // 
+            // label24
+            // 
+            resources.ApplyResources(this.label24, "label24");
+            this.label24.Name = "label24";
+            // 
+            // label25
+            // 
+            resources.ApplyResources(this.label25, "label25");
+            this.label25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(16)))), ((int)(((byte)(224)))));
+            this.label25.Name = "label25";
+            // 
+            // label26
+            // 
+            resources.ApplyResources(this.label26, "label26");
+            this.label26.Name = "label26";
             // 
             // MainForm
             // 
@@ -445,9 +454,10 @@
             this.StatsTable.PerformLayout();
             this.MainGroupBox.ResumeLayout(false);
             this.MainGroupBox.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -492,19 +502,20 @@
         private System.Windows.Forms.ComboBox calcPeriod;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ToolStripMenuItem пользователиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выбратьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem создатьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
 
 
 

@@ -93,6 +93,18 @@
     <Compile Include="about.Designer.cs">
       <DependentUpon>about.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateUserDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateUserDialog.Designer.cs">
+      <DependentUpon>CreateUserDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteUserWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteUserWindow.Designer.cs">
+      <DependentUpon>DeleteUserWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +121,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CycleControlDialog.resx">
       <DependentUpon>CycleControlDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateUserDialog.resx">
+      <DependentUpon>CreateUserDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteUserWindow.resx">
+      <DependentUpon>DeleteUserWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users.resx">
       <DependentUpon>Users.cs</DependentUpon>

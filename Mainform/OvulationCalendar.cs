@@ -44,7 +44,7 @@ namespace OvulationCalendar
         public MainForm()
         {
 
-            
+            Properties.Settings.Default.Reload();
             Splash.Show();
             Application.DoEvents();
 
@@ -62,83 +62,88 @@ namespace OvulationCalendar
         }
 
 
-        private void LoadSettings()
+        public void createUser(string UserName)
         {
             string AppName = "OvCalendar";
-            
-            //string output="";
-            IDictionary Envs= System.Environment.GetEnvironmentVariables();
-            
-            //foreach (DictionaryEntry Var in Envs)
-            //{
-            //    output =  output + Var.Key.ToString()+ "=" + Var.Value+"\n";
-                
-            //}
-            //MessageBox.Show(output, "fdfd");
-            string CurUserName = Envs["USERNAME"].ToString();
+            IDictionary Envs = System.Environment.GetEnvironmentVariables();
             string pth = "";
-          //  string FileWithUsersNames="Users";
-
-
-            string FullPathToDataBase = Properties.Settings.Default["SettingsFolder"].ToString() + Path.DirectorySeparatorChar ;
-            if (!File.Exists(FullPathToDataBase + FileWithUsersNames))
-            {   // Пытаемся создать файл базы в папке программы
-                users.Add(CurUserName);
-                Properties.Settings.Default["CurrentUser"] = CurUserName;
-                Properties.Settings.Default.Save();     // Сохраняем текущего пользователя как активного пользователя в постоянных настройках
-                //XmlSerializer serializer = new XmlSerializer(typeof(List<string>));
+            string FullPathToDataBase = Properties.Settings.Default.SettingsFolder.ToString() + Path.DirectorySeparatorChar;
+            users.Add(UserName);
+            Properties.Settings.Default.CurrentUser = UserName;
+            Properties.Settings.Default.Save();     // Сохраняем текущего пользователя как активного пользователя в постоянных настройках
+            //XmlSerializer serializer = new XmlSerializer(typeof(List<string>));
+            try
+            {
+                TextWriter writer = new StreamWriter(FullPathToDataBase + FileWithUsersNames, true);
+                writer.WriteLine(UserName);
+                writer.Close();
+                Properties.Settings.Default.SettingsFolder = ".";
+                Properties.Settings.Default.Save();
+                this.FileWithSerializedCycles = FullPathToDataBase + UserName;  
+            }
+            catch
+            { //Если не получается, то будем хранить базу в Аppdata
                 try
                 {
-                    TextWriter writer = new StreamWriter(FullPathToDataBase + FileWithUsersNames);
-                    writer.WriteLine(CurUserName);
-                    writer.Close();
-                    Properties.Settings.Default["SettingsFolder"] = ".";
+                    pth = Envs["APPDATA"].ToString();
+                    pth = pth + Path.DirectorySeparatorChar + AppName;
+                    if (!Directory.Exists(pth))
+                    {
+                        Directory.CreateDirectory(pth);
+                    }
+
+                    Properties.Settings.Default.SettingsFolder = pth;
                     Properties.Settings.Default.Save();
-                    this.FileWithSerializedCycles = Path.GetDirectoryName(FullPathToDataBase + FileWithUsersNames) + users[0];
+
+                    pth = pth + Path.DirectorySeparatorChar + FileWithUsersNames;
+
+                    if (!File.Exists(pth))
+                    {
+                        TextWriter writer = new StreamWriter(pth,true);
+                        writer.WriteLine(UserName);
+                        writer.Close();
+                        this.FileWithSerializedCycles = Path.GetDirectoryName(pth) + Path.DirectorySeparatorChar + UserName;
+                        //MessageBox.Show(this.FileWithSerializedCycles, "");
+                    }
+                    else
+                    {
+                        ReadProgramData(FileWithUsersNames);
+
+                    }
+
+                    //UserData
+
                 }
                 catch
-                { //Если не получается, то будем хранить базу в Аppdata
-                    try
-                    {
-                        pth = Envs["APPDATA"].ToString();
-                        pth = pth + Path.DirectorySeparatorChar + AppName;
-                        if (!Directory.Exists(pth))
-                        {
-                            Directory.CreateDirectory(pth);
-                        }
+                {
 
-                        Properties.Settings.Default["SettingsFolder"] = pth;
-                        Properties.Settings.Default.Save();
-
-                        pth = pth + Path.DirectorySeparatorChar + FileWithUsersNames;
-
-                        if (!File.Exists(pth))
-                        {
-                            TextWriter writer = new StreamWriter(pth);
-                            writer.WriteLine(CurUserName);
-                            writer.Close();                            
-                            this.FileWithSerializedCycles = Path.GetDirectoryName(FileWithUsersNames) + users[0];
-                            //MessageBox.Show(this.FileWithSerializedCycles, "");
-                        }
-                        else
-                        {
-                            ReadProgramData(FileWithUsersNames);
-  
-                        }
-
-                        //UserData
-
-                    }
-                    catch
-                    {
-
-                        MessageBox.Show("Программа не может создать файл настроек. \rВидимо отсутствует доступ к файловой системе \r", "Ошибка");
-                        this.Close();
-                    }
-
-
+                    MessageBox.Show("Программа не может создать файл настроек. \rВидимо отсутствует доступ к файловой системе \r", "Ошибка");
+                    this.Close();
                 }
 
+
+            }
+        }
+
+
+        private void LoadSettings()
+        {
+
+            //MessageBox.Show(Properties.Settings.Default.CurrentUser, "Пользователь в настройках:", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); //Debug
+           
+            IDictionary Envs= System.Environment.GetEnvironmentVariables();
+           
+            //string CurUserName = Envs["USERNAME"].ToString();
+            string SystemUserName = Envs["USERNAME"].ToString();
+            
+       
+
+
+            string FullPathToDataBase = Properties.Settings.Default.SettingsFolder + Path.DirectorySeparatorChar ;
+            if (!File.Exists(FullPathToDataBase + FileWithUsersNames))
+            {   // Пытаемся создать файл базы в папке программы
+
+                createUser(SystemUserName);
 
             }
 
@@ -151,7 +156,7 @@ namespace OvulationCalendar
 
         private void ReadProgramData(string FileWithUsersNames)
         {
-            string FullPathToDataBase = Properties.Settings.Default["SettingsFolder"].ToString() + Path.DirectorySeparatorChar;
+            string FullPathToDataBase = Properties.Settings.Default.SettingsFolder + Path.DirectorySeparatorChar;
             StreamReader sr;
             try
             {
@@ -162,9 +167,9 @@ namespace OvulationCalendar
                 while ((line = sr.ReadLine()) != null)
                 {
                     users.Add(line);
-                    if (line == Properties.Settings.Default["CurrentUser"].ToString()) CurrentUserName = line;
+                    if (line == Properties.Settings.Default.CurrentUser) CurrentUserName = line;
                 }
-
+                if (CurrentUserName == null) CurrentUserName = users[0];
                 sr.Close();
             }
             catch
@@ -415,6 +420,22 @@ namespace OvulationCalendar
             Users UsersWindow = new Users(this);
             UsersWindow.Show();
         }
+
+        private void создатьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateUsersWindow CreateUserWindow = new CreateUsersWindow(this);
+            CreateUserWindow.Show();
+        }
+
+        private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DeleteUserWindow DeleteUserWindow = new DeleteUserWindow(this);
+            DeleteUserWindow.Show();
+        }
+
+       
+
+      
 
 
 
