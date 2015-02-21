@@ -9,7 +9,9 @@ using System.Windows.Forms;
 using System.Collections;
 using System.IO;
 using System.Xml.Serialization;
-
+using System.Globalization;
+using System.Resources;
+using System.Threading;
 
 namespace OvulationCalendar
 {
@@ -39,10 +41,17 @@ namespace OvulationCalendar
         public splash Splash = new splash();
         
         
+        
         public MainForm()
         {
 
             Properties.Settings.Default.Reload();
+            //CultureInfo myCultureInfo = new CultureInfo(CultureInfo.CurrentCulture.Name);
+            CultureInfo myCultureInfo = new CultureInfo("en-US");
+            //CultureInfo myCultureInfo = new CultureInfo("ru-RU");
+            Thread.CurrentThread.CurrentCulture = myCultureInfo;
+            Thread.CurrentThread.CurrentUICulture = myCultureInfo;
+
             Splash.Show();
             Application.DoEvents();
 
@@ -442,6 +451,8 @@ namespace OvulationCalendar
     }
 
 
+
+
     public class Calendar
     {
         MainForm Mf;
@@ -449,7 +460,9 @@ namespace OvulationCalendar
         public Cycle MenstruationPrediction = new Cycle();
         public Cycle OvulationPrediction = new Cycle();
 
-        public static List<string> MonthsArray = new List<string> { "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь" };
+        public static List<string> MonthsArray = new List<string> { Strings.January, Strings.February, Strings.March, Strings.April,
+                                Strings.May,Strings.June,Strings.July,Strings.August,Strings.September,Strings.October,Strings.November,Strings.December
+                               };
         public static List<string> DaysOfWeek = new List<string> { "Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс" };
         static readonly DateTime today = DateTime.Now;
         static readonly TimeSpan tm = new TimeSpan(today.DayOfYear - 1, 0, 0, 0);

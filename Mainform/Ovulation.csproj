@@ -105,6 +105,11 @@
     <Compile Include="DeleteUserWindow.Designer.cs">
       <DependentUpon>DeleteUserWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
     <Compile Include="Users.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +132,20 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteUserWindow.resx">
       <DependentUpon>DeleteUserWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OvulationCalendar.en-US.resx">
+      <DependentUpon>OvulationCalendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OvulationCalendar.ru-RU.resx">
+      <DependentUpon>OvulationCalendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Strings.en-US.resx" />
+    <EmbeddedResource Include="Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users.en-US.resx">
+      <DependentUpon>Users.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users.resx">
       <DependentUpon>Users.cs</DependentUpon>
