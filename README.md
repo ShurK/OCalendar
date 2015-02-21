@@ -1,8 +1,8 @@
 # OCalendar
 
-Ovulation Calendar
+Fertile days Calendar, English version
 
-Only Russian verstion at the moment. 
+Only English verstion at the moment. 
 
 Календарь месячных циклов. Может предсказывать вероятности начала менструации и вероятность овуляции на любой день. 
 Есть много статистики.
