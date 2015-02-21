@@ -61,7 +61,7 @@ namespace OvulationCalendar
 
             //int a = 0;
 
-
+            
             
 
             //MessageBox.Show(CL.AllYears[5].NumYear.ToString(), "Год");
@@ -173,8 +173,13 @@ namespace OvulationCalendar
 
                 while ((line = sr.ReadLine()) != null)
                 {
-                    users.Add(line);
-                    if (line == Properties.Settings.Default.CurrentUser) CurrentUserName = line;
+                    users.Add(line);                    
+                    UserComboBox.Items.Add(line);
+                    if (line == Properties.Settings.Default.CurrentUser)
+                    {
+                        CurrentUserName = line;                       
+                        UserComboBox.SelectedItem = line;
+                    }
                 }
                 if (CurrentUserName == null) CurrentUserName = users[0];
                 sr.Close();
@@ -226,7 +231,7 @@ namespace OvulationCalendar
                     this.CL.updateNoEndCycle();
                 }
 
-          
+            
             CL.CalcPredictedMenstruation();
             
         }
@@ -432,6 +437,22 @@ namespace OvulationCalendar
         {
             DeleteUserWindow DeleteUserWindow = new DeleteUserWindow(this);
             DeleteUserWindow.Show();
+        }
+
+        private void UserComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox UserCombo = (ComboBox)sender;
+            if (CurrentUserName == UserCombo.SelectedItem.ToString()) return;
+            Properties.Settings.Default.CurrentUser = UserCombo.SelectedItem.ToString();
+            Properties.Settings.Default.Save();
+            //this.Close();
+            MessageBox.Show(Strings.UserChangeSuccess + " \r" + Strings.AppRestartingRequired, Strings.Done, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            Application.Restart();
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
         }
 
        

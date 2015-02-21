@@ -137,25 +137,25 @@
     <value>Help</value>
   </data>
   <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>92, 22</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
   <data name="выбратьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>133, 22</value>
   </data>
   <data name="выбратьToolStripMenuItem.Text" xml:space="preserve">
     <value>Change</value>
   </data>
   <data name="создатьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>133, 22</value>
   </data>
   <data name="создатьToolStripMenuItem.Text" xml:space="preserve">
     <value>Create new</value>
   </data>
   <data name="удалитьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>133, 22</value>
   </data>
   <data name="удалитьToolStripMenuItem.Text" xml:space="preserve">
     <value>Delete</value>
@@ -175,15 +175,6 @@
   <data name="calcPeriod.Items7" xml:space="preserve">
     <value>All</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Other stats</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Monthly cycle duration, days</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Menses duration, days</value>
-  </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 13</value>
   </data>
@@ -202,6 +193,9 @@
   <data name="label11.Text" xml:space="preserve">
     <value>Last recording</value>
   </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Other stats</value>
+  </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 13</value>
   </data>
@@ -219,6 +213,12 @@
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Maximal:</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Monthly cycle duration, days</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Menses duration, days</value>
   </data>
   <data name="stat3.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 13</value>
@@ -239,11 +239,11 @@
     <value>Maximal:</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>218, 26</value>
+    <value>220, 26</value>
   </data>
   <data name="label12.Text" xml:space="preserve">
     <value>In order to see probailities and other statistics
-you shold record at least two monthly cycles
+you should record at least two monthly cycles
 </value>
   </data>
   <data name="label13.Text" xml:space="preserve">
@@ -266,6 +266,32 @@ you shold record at least two monthly cycles
   </data>
   <data name="label26.Text" xml:space="preserve">
     <value>Menses begining probability</value>
+  </data>
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxEAAAsRAX9kX5EAAAFsSURBVEhLrdW/K8RxHMfxc/lR
+        N0lGw2WQlPIPSAYlA/kDmIjspMQmMimZTYZTV7IoKYu/wGRRJIVBMVgMH89P+dTn+/683OdOhsfwfd37
+        9fp2t1zJOdeUvu3LHsxhF4uoqDtLhhZjvTjAAxyesYcpdR+TYYyRAbzDDyuP+PXbyDCgWI2GGrlWfU+G
+        AcVNM9RIv9pIghilKzPSyIraSIKAQju+ooGcfbWTBAGFQTOQc6R2kiCgMGYGcmpqJwkCCpNmIOdM7SRB
+        QGHGDOScqp0kCCjMmoGcutpJgoDCkhnIuVA7SeBx3IaTqNyMF5TtVuEh4LAD9z/FVnTbrcJDjOMKFlDD
+        DdTgLc6xjqraSQKF8hDUC4bVfUyGMUZGcBeNxp4wrnqBDCmVMYFjqGGrjml02a3Cg8fRMl6hhnI+sBbv
+        2XH/f6uKrTosvICgE/4PXR3/1Vb8gnm8RR/+h8/4BaPYgP+Jdv6B31l1zpW+AdeeuxozLvmCAAAAAElF
+        TkSuQmCC
+</value>
+  </data>
+  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>932, 0</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 24</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Current
+user</value>
+  </data>
+  <data name="label10.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

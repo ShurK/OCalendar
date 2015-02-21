@@ -81,6 +81,9 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
+            this.UserComboBox = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.StatsPanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -89,74 +92,75 @@
             this.MainGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.пользователиToolStripMenuItem,
             this.dataToolStripMenuItem});
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
+            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             // 
             // exitToolStripMenuItem
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // пользователиToolStripMenuItem
             // 
+            resources.ApplyResources(this.пользователиToolStripMenuItem, "пользователиToolStripMenuItem");
             this.пользователиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.выбратьToolStripMenuItem,
             this.создатьToolStripMenuItem,
             this.удалитьToolStripMenuItem});
             this.пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
-            resources.ApplyResources(this.пользователиToolStripMenuItem, "пользователиToolStripMenuItem");
             // 
             // выбратьToolStripMenuItem
             // 
-            this.выбратьToolStripMenuItem.Name = "выбратьToolStripMenuItem";
             resources.ApplyResources(this.выбратьToolStripMenuItem, "выбратьToolStripMenuItem");
+            this.выбратьToolStripMenuItem.Name = "выбратьToolStripMenuItem";
             this.выбратьToolStripMenuItem.Click += new System.EventHandler(this.выбратьToolStripMenuItem_Click);
             // 
             // создатьToolStripMenuItem
             // 
-            this.создатьToolStripMenuItem.Name = "создатьToolStripMenuItem";
             resources.ApplyResources(this.создатьToolStripMenuItem, "создатьToolStripMenuItem");
+            this.создатьToolStripMenuItem.Name = "создатьToolStripMenuItem";
             this.создатьToolStripMenuItem.Click += new System.EventHandler(this.создатьToolStripMenuItem_Click);
             // 
             // удалитьToolStripMenuItem
             // 
-            this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
             resources.ApplyResources(this.удалитьToolStripMenuItem, "удалитьToolStripMenuItem");
+            this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
             this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
             // dataToolStripMenuItem
             // 
+            resources.ApplyResources(this.dataToolStripMenuItem, "dataToolStripMenuItem");
             this.dataToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.оПрограммеToolStripMenuItem});
             this.dataToolStripMenuItem.Name = "dataToolStripMenuItem";
-            resources.ApplyResources(this.dataToolStripMenuItem, "dataToolStripMenuItem");
             // 
             // оПрограммеToolStripMenuItem
             // 
-            this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
             resources.ApplyResources(this.оПрограммеToolStripMenuItem, "оПрограммеToolStripMenuItem");
+            this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
             // contextMenuStrip1
             // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
             resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
             // 
             // YearLabel
             // 
@@ -199,6 +203,7 @@
             // 
             // calcPeriod
             // 
+            resources.ApplyResources(this.calcPeriod, "calcPeriod");
             this.calcPeriod.DisplayMember = "1";
             this.calcPeriod.FormattingEnabled = true;
             this.calcPeriod.Items.AddRange(new object[] {
@@ -210,7 +215,6 @@
             resources.GetString("calcPeriod.Items5"),
             resources.GetString("calcPeriod.Items6"),
             resources.GetString("calcPeriod.Items7")});
-            resources.ApplyResources(this.calcPeriod, "calcPeriod");
             this.calcPeriod.Name = "calcPeriod";
             this.calcPeriod.ValueMember = "3";
             this.calcPeriod.SelectedIndexChanged += new System.EventHandler(this.calcPeriod_SelectedIndexChanged);
@@ -429,10 +433,35 @@
             resources.ApplyResources(this.label26, "label26");
             this.label26.Name = "label26";
             // 
+            // UserComboBox
+            // 
+            resources.ApplyResources(this.UserComboBox, "UserComboBox");
+            this.UserComboBox.FormattingEnabled = true;
+            this.UserComboBox.Name = "UserComboBox";
+            this.UserComboBox.SelectedIndexChanged += new System.EventHandler(this.UserComboBox_SelectedIndexChanged);
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.BackColor = System.Drawing.SystemColors.Window;
+            this.label10.Name = "label10";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.UserComboBox);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.StatsPanel);
             this.Controls.Add(this.MainGroupBox);
@@ -459,6 +488,7 @@
             this.groupBox1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -517,6 +547,9 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.ComboBox UserComboBox;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label10;
 
 
 
