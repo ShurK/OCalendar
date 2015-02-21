@@ -105,7 +105,7 @@
     <Compile Include="DeleteUserWindow.Designer.cs">
       <DependentUpon>DeleteUserWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Strings.Designer.cs">
+    <Compile Include="Strings1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
@@ -124,11 +124,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="about.en-US.resx">
+      <DependentUpon>about.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateUserDialog.en-US.resx">
+      <DependentUpon>CreateUserDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CycleControlDialog.en-US.resx">
+      <DependentUpon>CycleControlDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CycleControlDialog.resx">
       <DependentUpon>CycleControlDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateUserDialog.resx">
       <DependentUpon>CreateUserDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteUserWindow.en-US.resx">
+      <DependentUpon>DeleteUserWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteUserWindow.resx">
       <DependentUpon>DeleteUserWindow.cs</DependentUpon>
@@ -139,10 +151,16 @@
     <EmbeddedResource Include="OvulationCalendar.ru-RU.resx">
       <DependentUpon>OvulationCalendar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="splash.en-US.resx">
+      <DependentUpon>splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="splash.ru-RU.resx">
+      <DependentUpon>splash.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Strings.en-US.resx" />
     <EmbeddedResource Include="Strings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+      <LastGenOutput>Strings1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Users.en-US.resx">
       <DependentUpon>Users.cs</DependentUpon>

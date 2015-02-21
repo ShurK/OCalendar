@@ -53,7 +53,7 @@ namespace OvulationCalendar
                     Properties.Settings.Default.CurrentUser = listBox_Users.SelectedItem.ToString();
                     Properties.Settings.Default.Save();
                     this.Close();
-                    MessageBox.Show("Пользователь изменен. Нужно перезапустить программу, \rчтобы изменения вступили в силу.", "Выполнено", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show(Strings.UserChangeSuccess + " \r" + Strings.AppRestartingRequired, Strings.Done, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     Application.Restart();
                 }
                 else

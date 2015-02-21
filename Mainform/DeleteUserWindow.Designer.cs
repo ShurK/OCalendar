@@ -35,36 +35,27 @@
             // 
             // listBox_Users
             // 
+            resources.ApplyResources(this.listBox_Users, "listBox_Users");
             this.listBox_Users.FormattingEnabled = true;
-            this.listBox_Users.Location = new System.Drawing.Point(22, 12);
             this.listBox_Users.Name = "listBox_Users";
-            this.listBox_Users.Size = new System.Drawing.Size(206, 121);
-            this.listBox_Users.TabIndex = 3;
             // 
             // DeleteUser_Button
             // 
-            this.DeleteUser_Button.Location = new System.Drawing.Point(22, 138);
+            resources.ApplyResources(this.DeleteUser_Button, "DeleteUser_Button");
             this.DeleteUser_Button.Name = "DeleteUser_Button";
-            this.DeleteUser_Button.Size = new System.Drawing.Size(75, 23);
-            this.DeleteUser_Button.TabIndex = 4;
-            this.DeleteUser_Button.Text = "Удалить";
             this.DeleteUser_Button.UseVisualStyleBackColor = true;
             this.DeleteUser_Button.Click += new System.EventHandler(this.DeleteUser_Button_Click);
             // 
             // DeleteUserWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(253, 173);
             this.Controls.Add(this.DeleteUser_Button);
             this.Controls.Add(this.listBox_Users);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DeleteUserWindow";
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Удалить пользователя";
             this.TopMost = true;
             this.ResumeLayout(false);
 

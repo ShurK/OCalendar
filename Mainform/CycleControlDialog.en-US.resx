@@ -117,62 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;listBox_Users.Name" xml:space="preserve">
-    <value>listBox_Users</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Text1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="DeleteUser_Button.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+  <data name="Text1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 9</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="DeleteUser_Button.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="Text1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>257, 13</value>
   </data>
-  <data name="listBox_Users.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="Text1.Text" xml:space="preserve">
+    <value>Choose starting and ending date of the menses cycle</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 13</value>
   </data>
-  <data name="&gt;&gt;listBox_Users.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Begin:</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>253, 173</value>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 13</value>
   </data>
-  <data name="&gt;&gt;listBox_Users.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label2.Text" xml:space="preserve">
+    <value>End:</value>
   </data>
-  <data name="&gt;&gt;DeleteUser_Button.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="radioButton1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 49</value>
   </data>
-  <data name="listBox_Users.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 121</value>
+  <data name="radioButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 17</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
+  <data name="radioButton1.Text" xml:space="preserve">
+    <value>Duration is known</value>
   </data>
-  <data name="DeleteUser_Button.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 138</value>
+  <data name="radioButton2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 95</value>
   </data>
-  <data name="&gt;&gt;DeleteUser_Button.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="radioButton2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 17</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>DeleteUserWindow</value>
+  <data name="radioButton2.Text" xml:space="preserve">
+    <value>Only begining is known</value>
   </data>
-  <data name="listBox_Users.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 12</value>
-  </data>
-  <data name="&gt;&gt;DeleteUser_Button.Name" xml:space="preserve">
-    <value>DeleteUser_Button</value>
-  </data>
-  <data name="&gt;&gt;listBox_Users.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Удалить пользователя</value>
+  <data name="Cancel.Text" xml:space="preserve">
+    <value>Cancel</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -430,19 +420,7 @@
         AADgfwAAzP8AAJz/AAD9/wAA+f8AAP//AAA=
 </value>
   </data>
-  <data name="DeleteUser_Button.Text" xml:space="preserve">
-    <value>Удалить</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Record new menses</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="&gt;&gt;DeleteUser_Button.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>en-US</value>
-  </metadata>
 </root>

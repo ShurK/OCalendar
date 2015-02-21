@@ -37,7 +37,7 @@ namespace OvulationCalendar
             {
                 if (mainForm.users.Count < 2)
                 {
-                    MessageBox.Show("Нельзя удалить последнего пользователя.", "Неудачно", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show(Strings.WarnLastUserDelete, Strings.Failed , MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return; 
                 }
                 string prev_user= mainForm.users[mainForm.users.Count - 2].ToString();
@@ -55,7 +55,7 @@ namespace OvulationCalendar
                     catch
                     {
 
-                        MessageBox.Show("Не удается удалить файл базы данных. \rВидимо отсутствует доступ к файловой системе \r", "Ошибка");
+                        MessageBox.Show(Strings.CannotDelDatabaseFile + " \r" + Strings.NoAccessToFile+" \r", Strings.Error );
                         this.Close();
                     }
                 }
@@ -76,14 +76,14 @@ namespace OvulationCalendar
                     catch
                     {
 
-                        MessageBox.Show("Не удается удалить запись имени пользователя из базы данных. \rВидимо отсутствует доступ к файловой системе \r", "Ошибка");
+                        MessageBox.Show(Strings.CannotDelDatabaseFile + " \r" + Strings.NoAccessToFile + " \r", Strings.Error);
                         this.Close();
                     }
                 }
 
                 
                 this.Close();
-                MessageBox.Show("Пользователь удален. Нужно перезапустить программу, \rчтобы изменения вступили в силу.", "Выполнено", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(Strings.UserHasBeenDeleted + " \r" + Strings.AppRestartingRequired +" \r", Strings.Done , MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 Application.Restart();
                
             }

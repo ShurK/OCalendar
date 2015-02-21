@@ -117,17 +117,89 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddMenses" xml:space="preserve">
+    <value>Add Menses</value>
+  </data>
+  <data name="AppRestartingRequired" xml:space="preserve">
+    <value>Application restarting required for the changes to take in effect</value>
+  </data>
   <data name="April" xml:space="preserve">
     <value>April</value>
   </data>
   <data name="August" xml:space="preserve">
     <value>August</value>
   </data>
+  <data name="CannotCreateDataBaseFile" xml:space="preserve">
+    <value>Cannot create database file</value>
+  </data>
+  <data name="CannotDelDatabaseFile" xml:space="preserve">
+    <value>Cannot delete the user database file.</value>
+  </data>
+  <data name="CannotOpenUserNamesFile" xml:space="preserve">
+    <value>Cannot open user names file</value>
+  </data>
+  <data name="CannotSaveSettings" xml:space="preserve">
+    <value>Cannot save settings to file</value>
+  </data>
+  <data name="ChangeMenses" xml:space="preserve">
+    <value>Change Menses</value>
+  </data>
+  <data name="CycleChanging" xml:space="preserve">
+    <value>Cycle modification</value>
+  </data>
   <data name="December" xml:space="preserve">
     <value>December</value>
   </data>
+  <data name="Done" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="endin" xml:space="preserve">
+    <value>ending</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Err_CannotCreateNewCycleWhileOldOneIsNotEnded" xml:space="preserve">
+    <value>Cannot create new Cycle while old one is not ended</value>
+  </data>
+  <data name="Err_CycleIsOverlappedWithExisting" xml:space="preserve">
+    <value>The Cycle is overlapping with existing one</value>
+  </data>
+  <data name="Err_CycleIsTooLong" xml:space="preserve">
+    <value>The Cycle is too long.</value>
+  </data>
+  <data name="Err_CycleShuldBeLongerThanOneDay" xml:space="preserve">
+    <value>The Cycle shuld be longer than one day.</value>
+  </data>
+  <data name="Err_EndIsEarlierThanBegin" xml:space="preserve">
+    <value>End of Cycle is earlier than its begining</value>
+  </data>
+  <data name="Err_NewRangeIsOverlappingWithOtherCycle" xml:space="preserve">
+    <value>New range is overlapping with other Cycle</value>
+  </data>
+  <data name="Err_OneNotEndedCycleAlreadyExist" xml:space="preserve">
+    <value>One not ended Cycle already exists</value>
+  </data>
+  <data name="Err_ShouldBeMoreThan10daysBetweenCycles" xml:space="preserve">
+    <value>Should be more than 10 days between Cycles</value>
+  </data>
+  <data name="Err_TheCycleIsTooFar" xml:space="preserve">
+    <value>The Cycle is too far from the current day.</value>
+  </data>
+  <data name="Err_TooOldDateForNotCompleteCycle" xml:space="preserve">
+    <value>Too old date for a not complete cycle</value>
+  </data>
+  <data name="Err_YearShouldBeInRange" xml:space="preserve">
+    <value>The year should be in range</value>
+  </data>
+  <data name="Failed" xml:space="preserve">
+    <value>Failed</value>
+  </data>
   <data name="February" xml:space="preserve">
     <value>February</value>
+  </data>
+  <data name="Fri" xml:space="preserve">
+    <value>Fr</value>
   </data>
   <data name="January" xml:space="preserve">
     <value>January</value>
@@ -144,13 +216,72 @@
   <data name="May" xml:space="preserve">
     <value>May</value>
   </data>
+  <data name="mens" xml:space="preserve">
+    <value>Mens</value>
+  </data>
+  <data name="MensesEndProbability" xml:space="preserve">
+    <value>Menses ending probability {0}%</value>
+  </data>
+  <data name="MensesProbability" xml:space="preserve">
+    <value>Menses begining probability {0}%</value>
+  </data>
+  <data name="Mon" xml:space="preserve">
+    <value>Mo</value>
+  </data>
+  <data name="NewUserCreateSuccess" xml:space="preserve">
+    <value>New user created successfully</value>
+  </data>
+  <data name="NoAccessToFile" xml:space="preserve">
+    <value>Probably the file is locked</value>
+  </data>
+  <data name="notAvailable" xml:space="preserve">
+    <value>n/a</value>
+  </data>
   <data name="November" xml:space="preserve">
     <value>November</value>
   </data>
   <data name="October" xml:space="preserve">
     <value>October</value>
   </data>
+  <data name="ovul" xml:space="preserve">
+    <value>Fertile</value>
+  </data>
+  <data name="OvulationProbability" xml:space="preserve">
+    <value>Fertile day probability {0}%</value>
+  </data>
+  <data name="RemoveMenses" xml:space="preserve">
+    <value>Remove Menses</value>
+  </data>
+  <data name="Sat" xml:space="preserve">
+    <value>St</value>
+  </data>
   <data name="September" xml:space="preserve">
     <value>September</value>
+  </data>
+  <data name="Sun" xml:space="preserve">
+    <value>Sn</value>
+  </data>
+  <data name="Thu" xml:space="preserve">
+    <value>Th</value>
+  </data>
+  <data name="Tue" xml:space="preserve">
+    <value>Tu</value>
+  </data>
+  <data name="TwoMinCyclesExplanation" xml:space="preserve">
+    <value>
+(You should record at least 2 cycles
+in order to see more precise statistics)</value>
+  </data>
+  <data name="UserChangeSuccess" xml:space="preserve">
+    <value>The user has been changed successfully</value>
+  </data>
+  <data name="UserHasBeenDeleted" xml:space="preserve">
+    <value>The user has been removed</value>
+  </data>
+  <data name="WarnLastUserDelete" xml:space="preserve">
+    <value>You can not remove the last user</value>
+  </data>
+  <data name="Wed" xml:space="preserve">
+    <value>Wd</value>
   </data>
 </root>

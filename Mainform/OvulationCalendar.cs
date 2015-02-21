@@ -124,7 +124,7 @@ namespace OvulationCalendar
                 catch
                 {
 
-                    MessageBox.Show("Программа не может создать файл настроек. \rВидимо отсутствует доступ к файловой системе \r", "Ошибка");
+                    MessageBox.Show(Strings.CannotCreateDataBaseFile + " \r" + Strings.NoAccessToFile,  "Ошибка");
                     this.Close();
                 }
 
@@ -181,7 +181,7 @@ namespace OvulationCalendar
             }
             catch
             {
-                MessageBox.Show("Программа не может открыть файл с именами пользователей (Users). \r", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(Strings.CannotOpenUserNamesFile + " \r", Strings.Error, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.Close();
             };
 
@@ -366,16 +366,10 @@ namespace OvulationCalendar
         {
             int Period;
             if (int.TryParse(calcPeriod.SelectedItem.ToString(), out Period) && Period > 2 && Period < 24) monthsForPrediction = Period;
-            else monthsForPrediction = 48;
-            //if (CL.RaiseCyclesListChange != null) CL.invokeCyclesListChangeEvent();
-            //updateNoEndCycle();
-            
-            
+            else monthsForPrediction = 48;           
             CL.updateNoEndCycle();
             CL.CalcPredictedMenstruation();
-            ShowStats();
-            //this.ShowStats();
-
+            ShowStats(); 
         }
 
         public void ShowStats()
@@ -384,26 +378,26 @@ namespace OvulationCalendar
             int LongestPeriod = CL.findLongestPeriod();
             float AverageDuration = CL.findAverageCycleDuration();
 
-            if (ShortestPeriod < 40) val1.Text = ShortestPeriod.ToString(); else val1.Text = "н/д";
-            if (LongestPeriod > 1) val2.Text = string.Format("{0:F0}",LongestPeriod); else val2.Text = "н/д";
-            if (AverageDuration > 0) val3.Text = string.Format("{0:F1}", AverageDuration); else val3.Text = "н/д";
+            if (ShortestPeriod < 40) val1.Text = ShortestPeriod.ToString(); else val1.Text = Strings.notAvailable;
+            if (LongestPeriod > 1) val2.Text = string.Format("{0:F0}", LongestPeriod); else val2.Text = Strings.notAvailable;
+            if (AverageDuration > 0) val3.Text = string.Format("{0:F1}", AverageDuration); else val3.Text = Strings.notAvailable;
 
             float AverageCycleDuration=Calendar.statistics.getAverageCycle(this);
-            if (AverageCycleDuration > -1) val4.Text = string.Format("{0:F1}", AverageCycleDuration); else val4.Text = "н/д";
+            if (AverageCycleDuration > -1) val4.Text = string.Format("{0:F1}", AverageCycleDuration); else val4.Text = Strings.notAvailable;
 
             int MaxCycleDuration = Calendar.statistics.getMaxCycle(this);
-            if (MaxCycleDuration > -1) val6.Text = MaxCycleDuration.ToString(); else val6.Text = "н/д";
+            if (MaxCycleDuration > -1) val6.Text = MaxCycleDuration.ToString(); else val6.Text = Strings.notAvailable;
 
             int MinCycleDuration = Calendar.statistics.getMinCycle(this);
-            if (MinCycleDuration > -1) val5.Text = MinCycleDuration.ToString(); else val5.Text = "н/д";
+            if (MinCycleDuration > -1) val5.Text = MinCycleDuration.ToString(); else val5.Text = Strings.notAvailable;
 
             val7.Text = CL.CyclesList.Count().ToString();
 
             DateTime begin = Calendar.statistics.getBeginDate(this);
-            if (begin.Year > 1800) val8.Text = begin.ToShortDateString(); else val8.Text = "н/д";
+            if (begin.Year > 1800) val8.Text = begin.ToShortDateString(); else val8.Text = Strings.notAvailable;
 
             DateTime end = Calendar.statistics.getEndDate(this);
-            if (end.Year > 1800) val9.Text = end.ToShortDateString(); else val9.Text = "н/д";
+            if (end.Year > 1800) val9.Text = end.ToShortDateString(); else val9.Text = Strings.notAvailable;
 
             
 
@@ -463,7 +457,7 @@ namespace OvulationCalendar
         public static List<string> MonthsArray = new List<string> { Strings.January, Strings.February, Strings.March, Strings.April,
                                 Strings.May,Strings.June,Strings.July,Strings.August,Strings.September,Strings.October,Strings.November,Strings.December
                                };
-        public static List<string> DaysOfWeek = new List<string> { "Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс" };
+        public static List<string> DaysOfWeek = new List<string> { Strings.Mon, Strings.Tue, Strings.Wed, Strings.Thu, Strings.Fri, Strings.Sat, Strings.Sun };
         static readonly DateTime today = DateTime.Now;
         static readonly TimeSpan tm = new TimeSpan(today.DayOfYear - 1, 0, 0, 0);
         static readonly DateTime FirstJanuaryCurrent = today - tm;  // получаем 1 января текущего года
@@ -660,7 +654,7 @@ namespace OvulationCalendar
             }
             catch
             {
-                MessageBox.Show("Не удалось сохранить настройки в \rфайл " + Mf.FileWithSerializedCycles.ToString());
+                MessageBox.Show(Strings.CannotSaveSettings + " " +  Mf.FileWithSerializedCycles.ToString());
             }
             
         }
@@ -822,11 +816,11 @@ namespace OvulationCalendar
                     label.blendColors();
                     //MessageBox.Show(label.ttip.GetToolTip(label).ToString());
                     if (label.ttip.GetToolTip(label) != null && new Cycle(label.chislo) != CyclesList[CyclesList.Count - 1]
-                        && label.ttip.GetToolTip(label).IndexOf("прекра")==-1 
+                        && label.ttip.GetToolTip(label).IndexOf(Strings.endin)==-1 
                         )
                         label.ttip.SetToolTip(label,null);
-                    else if (label.ttip.GetToolTip(label) != null && label.ttip.GetToolTip(label).IndexOf("прекра") > -1
-                        && label.ttip.GetToolTip(label).IndexOf("овул") > -1
+                    else if (label.ttip.GetToolTip(label) != null && label.ttip.GetToolTip(label).IndexOf(Strings.endin) > -1
+                        && label.ttip.GetToolTip(label).IndexOf(Strings.ovul) > -1
                         ) 
                     {
                         string initialText = label.ttip.GetToolTip(label);
@@ -941,24 +935,24 @@ namespace OvulationCalendar
                     float curpersents = (int)(percents[k] * 100);
                     if (curpersents == 100) { curpersents = 99; }
                     if (curpersents == 0) { curpersents = 1; }
-                    label.ttip.SetToolTip(label, string.Format("Вероятность начала менструации {0}%", curpersents));
+                    label.ttip.SetToolTip(label, string.Format(Strings.MensesProbability , curpersents));
                     label.ttip.InitialDelay = 100;
 
 
-                    if ((ovulation_labels[k].ttip.GetToolTip(ovulation_labels[k]).IndexOf("менстр")>-1
-                        || ovulation_labels[k].ttip.GetToolTip(ovulation_labels[k]).IndexOf("прекр")>-1)
-                        && ovulation_labels[k].ttip.GetToolTip(ovulation_labels[k]).IndexOf("овул")==-1
+                    if ((ovulation_labels[k].ttip.GetToolTip(ovulation_labels[k]).IndexOf(Strings.mens)>-1
+                        || ovulation_labels[k].ttip.GetToolTip(ovulation_labels[k]).IndexOf(Strings.endin )>-1)
+                        && ovulation_labels[k].ttip.GetToolTip(ovulation_labels[k]).IndexOf(Strings.ovul )==-1
                         ) // && ovulation_labels[k].ttip.GetToolTip(ovulation_labels[k]).Length > 2)
                     {
-                        ovulation_labels[k].ttip.SetToolTip(ovulation_labels[k], ovulation_labels[k].ttip.GetToolTip(ovulation_labels[k]) + "\n" + string.Format("Вероятность начала овуляции {0}%", curpersents));
+                        ovulation_labels[k].ttip.SetToolTip(ovulation_labels[k], ovulation_labels[k].ttip.GetToolTip(ovulation_labels[k]) + "\n" + string.Format(Strings.OvulationProbability , curpersents));
                         //MessageBox.Show("C Переводом");
                     }
                     else
                     {
                         if (ovulation_labels[k].ttip.GetToolTip(ovulation_labels[k]) != null) ovulation_labels[k].ttip.SetToolTip(ovulation_labels[k],null);
-                        
-                        
-                        ovulation_labels[k].ttip.SetToolTip(ovulation_labels[k], string.Format("Вероятность начала овуляции {0}%", curpersents));
+
+
+                        ovulation_labels[k].ttip.SetToolTip(ovulation_labels[k], string.Format(Strings.OvulationProbability, curpersents));
                         ovulation_labels[k].ttip.InitialDelay = 100;
                         //MessageBox.Show("Без");
                         
@@ -1120,11 +1114,11 @@ namespace OvulationCalendar
                 if (ProbabilityToPrint==0) {ProbabilityToPrint=1;}
                 if (CyclesList.Count < 2)
                 {
-                    CurLabel.ttip.SetToolTip(CurLabel, string.Format("Вероятность прекращения {0}% \r(Нужно ввести по меньшей мере 2 цикла, чтобы \rотобразилась более точная статистика)", ProbabilityToPrint));
+                    CurLabel.ttip.SetToolTip(CurLabel, string.Format(Strings.MensesEndProbability +" "+ Strings.TwoMinCyclesExplanation , ProbabilityToPrint));
                 }
                 else 
                 {
-                    CurLabel.ttip.SetToolTip(CurLabel, string.Format("Вероятность прекращения {0}%", ProbabilityToPrint));
+                    CurLabel.ttip.SetToolTip(CurLabel, string.Format(Strings.MensesEndProbability, ProbabilityToPrint));
                 }
                 CurLabel.ttip.InitialDelay = 100;
                 //CurLabel.
@@ -1416,12 +1410,12 @@ namespace OvulationCalendar
             menuItem3 = new System.Windows.Forms.MenuItem();
             contextMenu1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] { menuItem1, menuItem2, menuItem3 });
             menuItem1.Index = 0;
-            menuItem1.Text = "Добавить месячные";
+            menuItem1.Text = Strings.AddMenses ;
             menuItem2.Index = 1;
-            menuItem2.Text = "Изменить месячные";
+            menuItem2.Text = Strings.ChangeMenses;
             menuItem2.Enabled = false;
             menuItem3.Index = 2;
-            menuItem3.Text = "Удалить месячные";
+            menuItem3.Text = Strings.RemoveMenses ;
             menuItem3.Enabled = false;
 
             ContextMenu = contextMenu1;
@@ -1682,10 +1676,10 @@ namespace OvulationCalendar
             // Wed
             // 
             Wed.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            Wed.AutoSize = true;
-            Wed.Location = new System.Drawing.Point(59, 8);
+            Wed.AutoSize = false;
+            Wed.Location = new System.Drawing.Point(57, 8);
             Wed.Name = "Wed" + mthStringNumber;
-            Wed.Size = new System.Drawing.Size(21, 13);
+            Wed.Size = new System.Drawing.Size(29, 13);
             Wed.TabIndex = 2;
             Wed.Text = Calendar.DaysOfWeek[2];
             // 

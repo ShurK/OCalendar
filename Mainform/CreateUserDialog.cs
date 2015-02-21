@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Globalization;
+using System.Threading;
 
 namespace OvulationCalendar
 {
@@ -20,6 +22,9 @@ namespace OvulationCalendar
         public CreateUsersWindow(MainForm mf)
         {
             this.mainForm = mf;
+            CultureInfo myCultureInfo = new CultureInfo("en-US");           
+            Thread.CurrentThread.CurrentCulture = myCultureInfo;
+            Thread.CurrentThread.CurrentUICulture = myCultureInfo;
             InitializeComponent();
         }
 
@@ -31,7 +36,7 @@ namespace OvulationCalendar
                 Properties.Settings.Default.CurrentUser = this.NameForNewUser.Text.ToString();
                 Properties.Settings.Default.Save();
                 this.Close();
-                MessageBox.Show("Пользователь был создан и активирован. Нужно перезапустить \rпрограмму, чтобы изменения вступили в силу.", "Выполнено", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(Strings.NewUserCreateSuccess + " \r"+ Strings.AppRestartingRequired , Strings.Done, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 Application.Restart();
             }
         }

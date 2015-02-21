@@ -6,6 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Globalization;
+using System.Threading;
+
 
 namespace OvulationCalendar
 {
@@ -14,6 +17,9 @@ namespace OvulationCalendar
         //public ProgressBar progressBar1;
         public splash()
         {
+            CultureInfo myCultureInfo = new CultureInfo("en-US");            
+            Thread.CurrentThread.CurrentCulture = myCultureInfo;
+            Thread.CurrentThread.CurrentUICulture = myCultureInfo;
             InitializeComponent();
         }
 
