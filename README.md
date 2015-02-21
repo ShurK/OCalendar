@@ -4,13 +4,10 @@ Fertile days Calendar, English version
 
 Only English verstion at the moment. 
 
-Календарь месячных циклов. Может предсказывать вероятности начала менструации и вероятность овуляции на любой день. 
-Есть много статистики.
-Есть поддержка нескольких пользователей. У каждой естественно свой календарь. 
-Прогноз вероятности работает только после ввода хотя бы 2 месячных.
+Fertile days calendar. It may predict the beginning of menstruation and ovulation probability for any day. 
+A lot of statistic information available. 
+Multi-user support available. Each user has a personal calendar.  
+Prediction works only with at least two menstrual cycles entered. 
 
-
-
-Установка
-
-Просто копируем 2 файла из папки OCalendar в любое место на жесткий диск и запускаем.
+Installation. 
+Simply extract the arcvhive to any place on your hard drive, and launch the executable file.
